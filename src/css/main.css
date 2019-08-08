@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+@keyframes appear {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes loader {
+  from {left: 0vw;}
+  50% {left: 80vw;}
+  to {left: 0vw;}
+}
+
+body {
+  background-color: #f6f8fa;
+}
+
+h1 {
+  margin: auto;
+}
+
+.header {
+  background-color: #24292e;
+}
+
+.sort-down {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  border: 6px solid transparent; /* Прозрачные границы */
+  border-top: 10px solid #ffffff; /* Добавляем треугольник */
+  top: 6px;
+}
+
+.sort-up {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  border: 6px solid transparent; /* Прозрачные границы */
+  border-bottom: 10px solid #ffffff; /* Добавляем треугольник */
+  top: 2px;
+}
+
+.header > h1 {
+  color: #ffffff;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+.welcom-github-logo {
+  background: url('/public/img/welcomeIMG.png');
+  background-size: cover;
+  width: 50vmin;
+  height: 50vmin;
+  margin: auto;
+  animation: appear  .6s ease-in-out;
+}
+
+.welcom-github-logo > button {
+  margin-top: 40vmin;
+  animation: appear  .7s ease-in-out;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 100px minmax(80vh, 1fr) 300px;
+}
+
+.content {
+  padding-top: 24px;
+  padding-bottom: 48px;
+  width: 80vw;
+  margin: auto;
+  margin-top: 12px;
+}
+
+.commit-table {
+  animation: appear  .5s ease-in-out;
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  grid-template-rows: fit-content(20px);
+  grid-gap: 12px 0px;
+}
+
+.commit-table > div {
+  animation: appear  .5s ease-in-out;
+  min-height: 40px;
+  text-align: center;
+  background-color: #fafafb;
+  border-bottom: #a1a8ad solid 1px;
+}
+
+.commit-table > div > a {
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px dotted #d4d4d4;
+}
+
+.commit-table > .commit-message {
+  text-align: left;
+}
+
+.commit-table > .commit-table__head {
+  grid-row-start: 1;
+  grid-row-end: 4;
+  text-align: center;
+  background-color: #24292e;
+  color: #ffffff;
+}
+
+.commit-table > .commit-table__head > div {
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.loader {
+  padding-top: 12px;
+  width: 80vw;
+  height: 10px;
+  margin: auto;
+  animation: appear  .5s ease-in-out;
+}
+
+.loader > div {
+  position: relative;
+  background-color: #516273;
+  height: 10px;
+  width: 10px;
+  animation: loader infinite 2s ease-in-out;
+}
+
+.load-button {
+  display: block;
+  border: none;
+  height: 50px;
+  background-color: #516273;
+  font-size: 18px;
+  width: 20vw;
+  border-radius: 6px;
+  color: #ffffff; 
+  margin: auto;
+  transition: .5s ease-in-out;
+}
+
+.load-button:hover{
+  background-color: #6d849c;
+  transition: 1s ease-in-out;
+}
+
+.load-button:active, .load-button:focus { outline: none; }
+
+.search-block {
+  animation: appear  .5s ease-in-out;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  height: 36px;
+  width: auto;
+  margin-bottom: 12px;
+  background-color: #24292e;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.search-block .total-count {
+  margin-top: 6px;
+}
+
+.user-action {
+  margin-right: 24px;
+  margin-top: 6px;
+  text-align: right;
+  color: #fff;
+}
+
+.user-action > h1 {
+  font-size: 24px;
+}
+
+.user-action > .load-button {
+  display: inline-block;
+  width: 90px;
+  height: 30px;
+  margin: 0px;
+  margin-top: 12px;
+}
+
+.search-block > input {
+  border: none;
+  height: 70%;
+  width: 40%;
+  margin: 5px;
+  margin-left: 12px;
+  background-color: #42464a;
+  border-radius: 3px;
+  transition: .2s ease-in-out;
+}
+
+.search-block > *:focus {
+  outline: none;
+  width: 60%;
+  background-color: #fafbfc;
+  transition: .2s ease-in-out; 
+}
+
+.search-block__sort {
+  margin: auto;
+}
+
+.search-block__sort > * {
+  margin-right: 12px;
+  color: #ffffff;
+}
+
+.search-block__sort > .radio-sort {
+  display: none;
+}
+
+.checkbox-sort {
+  display: none;
+}
+
+.search-block__sort > label {
+  min-width: 1%;
+  height: 24px;
+  padding-right: 6px;
+  padding-left: 6px;
+  border: none;
+  background-color: #42464a55;
+  border-radius: 3px;
+  transition: .2s ease-in-out;
+}
+
+.radio-sort:checked + label {
+  background-color: #42464a;
+  border-radius: 3px;
+  padding-right: 6px;
+  transition: .1s ease-in-out;
+}
+
+.radio-sort:checked + label > input + label {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  border: 6px solid transparent; /* Прозрачные границы */
+  border-top: 10px solid #ffffff; /* Добавляем треугольник */
+  top: 6px;
+  transition: .1s ease-in-out;
+  animation: appear  .3s ease-in-out;
+}
+
+.radio-sort:checked + label > input:checked + label {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  border: 6px solid transparent; /* Прозрачные границы */
+  border-bottom: 10px solid #ffffff; /* Добавляем треугольник */
+  top: 0px;
+  transition: .1s ease-in-out;
+  animation: appear  .3s ease-in-out;
+}

@@ -31,12 +31,23 @@ module.exports = {
   module: {
 		rules: [
 			{
-        test: /\.tsx$/,
+        test: /\.(ts|tsx)$/,
         loader: "babel-loader"
       },
       {
-        test: /\.ttf$/,
-        loader: 'file-loader?name=./fonts/[name].[ext]'
+        test: /\.png$/,
+        loader: 'file-loader?name=../../public/img/[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          }
+        ]
       }
 		]
   },
@@ -52,7 +63,7 @@ module.exports = {
   },
 	
 	devServer: {
-    contentBase: 'src',
+    contentBase: '/src/app',
     inline: true,
     hot: true,
     open: true,
