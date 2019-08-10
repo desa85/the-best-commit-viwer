@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import * as Types from '../types'
+import HiddenFields from './HiddenFields'
 
 export interface AppComponentProps {
   value?: number;
@@ -21,10 +22,10 @@ const Search = (props: AppComponentProps) => {
           props.action(100, e.target.value)
         }}
       />
+      <HiddenFields />
       <div className = 'search-block__sort'>
         <span>Сортировать:</span>
         <input onClick = {() => {
-          console.log(props);
           props.dispatch({type: 'SORT_BY', payload: 'repo'});
           props.action(100, filter)
         }} checked = {sortBy === 'repo' ? 'checked' : ''} name = 'radio-sort' className = 'radio-sort' type= 'radio' id = 'radio-sort-repo' />

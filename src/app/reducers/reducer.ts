@@ -12,7 +12,14 @@ const initialState = {
   filter: '',
   dateSort: true,
   sortBy: 'repo',
-  avatarURL: ''
+  avatarURL: '',
+  columnsVisible: {
+    owner: true,
+    repo: true,
+    dateTime: true,
+    commitMessage: true,
+    hash: true
+  }
 }
 
 export default function reducer(state = initialState, action: Types.Action) {
@@ -31,6 +38,7 @@ export default function reducer(state = initialState, action: Types.Action) {
     case 'CHANGE_DATE_SORT': return {...state, dateSort: !state.dateSort}
     case 'SORT_BY' : return {...state, sortBy: action.payload}
     case 'ADD_AVATAR_URL' : return {...state, sortBy: action.payload}
+    case 'CHANGE_COLUMNS_VISIBLE' : return {...state, columnsVisible: {...state.columnsVisible, ...action.payload}}
     default: return state
   }
 }

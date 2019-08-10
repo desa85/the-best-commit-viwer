@@ -81,9 +81,12 @@ h1 {
 .commit-table {
   animation: appear  .5s ease-in-out;
   display: grid;
-  grid-template-columns: repeat(5, 2fr);
+  margin: auto;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: fit-content(20px);
   grid-gap: 12px 0px;
+  transition: 1s;
 }
 
 .commit-table > div {
@@ -156,13 +159,47 @@ h1 {
 .search-block {
   animation: appear  .5s ease-in-out;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 2fr 1fr 4fr 2fr;
   height: 36px;
   width: auto;
   margin-bottom: 12px;
   background-color: #24292e;
   border-radius: 6px;
   color: #fff;
+}
+
+.search-block__hidden > div {
+  background-color: #24292e;
+  text-align: center;
+  margin-top: 6px;
+  border-left: 1px solid #cacaca;
+  border-right: 1px solid #cacaca;
+}
+
+.search-block__hidden:hover > ul {
+  overflow: hidden;
+  height: 150px;
+  transition: .2s;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+.search-block__hidden:hover > ul > li {
+  height: 30px;
+  padding-left: 6px;
+}
+
+.search-block__hidden:hover > ul > li > input {
+  margin-left: 3px;
+}
+
+.search-block__hidden > ul {
+  position: relative;
+  overflow: hidden;
+  background-color: #24292e;
+  height: 0px;
+  transition: .2s;
 }
 
 .search-block .total-count {
@@ -190,7 +227,7 @@ h1 {
 
 .search-block > input {
   border: none;
-  height: 70%;
+  height: 24px;
   width: 40%;
   margin: 5px;
   margin-left: 12px;
@@ -208,6 +245,7 @@ h1 {
 
 .search-block__sort {
   margin: auto;
+  margin-top: 6px;
 }
 
 .search-block__sort > * {
