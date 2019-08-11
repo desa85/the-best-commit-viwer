@@ -67,6 +67,13 @@ module.exports = {
     inline: true,
     hot: true,
     open: true,
-    port: 3001
+    port: 3001,
+    proxy: {
+      '/github': {
+        target: 'https://github.com',
+        pathRewrite: {'^/github' : ''},
+        changeOrigin: true
+      }
+    }
   }
 };

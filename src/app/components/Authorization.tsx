@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import * as Types from '../types'
-import { apiConst } from '../Api'
+import { GithubAuthUri } from '../Api'
 
 export interface AppComponentProps {
   value?: number;
@@ -14,13 +14,13 @@ const Authorization = (props: AppComponentProps) => {
     <div className="container">
       <h1  className="some-user-class">The Best Commit Viwer</h1>
       <div className = 'welcom-github-logo'>
-        <button onClick = {() => document.location.href = apiConst.AuthPath} className = 'load-button'>Войти чере Github</button>
+        <button onClick = {() => document.location.href = GithubAuthUri} className = 'load-button'>Войти чере Github</button>
       </div>
     </div>
   )
 }
 
-function mapStateToProps (state: Types.AppState) {
+const mapStateToProps = (state: Types.AppState) => {
   return {
     values: state
   }
