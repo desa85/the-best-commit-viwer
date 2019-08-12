@@ -11,7 +11,7 @@ const Loader = (props: AppComponentProps) => {
   if (!isLoad && (totalCount <= commits.length && totalCount !== 0 || commits.length <= 1)) return <div />
   return (
     isLoad ? <div className = 'loader'><div></div></div> : 
-    <div className = 'loader'><button onClick = {() => props.action()} className = 'load-button'>Загрузить еще</button></div>
+      <div className = 'loader'><button onClick = {() => props.action()} className = 'load-button'>Загрузить еще</button></div>
   )
 }
 

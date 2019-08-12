@@ -103,6 +103,10 @@ h1 {
   border-bottom: 1px dotted #d4d4d4;
 }
 
+.commit-table > div > .TV-URL {
+  color: #006ad4;
+}
+
 .commit-table > .commit-message {
   text-align: left;
 }
@@ -300,3 +304,4 @@ h1 {
   transition: .1s ease-in-out;
   animation: appear  .3s ease-in-out;
 }
+

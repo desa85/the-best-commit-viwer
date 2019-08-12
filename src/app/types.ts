@@ -8,19 +8,19 @@ declare module "Types" {
     commits: CommitInfo[];
     isLoad: boolean;
     page: number;
-    totalCount: null | number
+    totalCount: null | number;
   }
   export interface Action {
     type: string;
     pyload: any;
   }
   export interface CommitInfo {
-    owner: string,
-    ownerURL: string,
-    repo: string,
-    repoURL: string,
-    dateTime: string,
-    commitMessage: string,
-    hash: string,
+    owner: string;
+    ownerURL: string;
+    repo: string;
+    repoURL: string;
+    dateTime: string;
+    commitMessage: string;
+    hash: string;
   }
 }

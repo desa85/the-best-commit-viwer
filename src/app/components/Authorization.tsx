@@ -9,7 +9,6 @@ export interface AppComponentProps {
 
 const Authorization = (props: AppComponentProps) => { 
   setTimeout(() => props.dispatch({type: 'SET_VALUE'}), 1000)
-  const { value, isAuthorization } = props.values
   return (
     <div className="container">
       <h1  className="some-user-class">The Best Commit Viwer</h1>
