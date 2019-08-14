@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import * as Types from '../types'
-import { setCommitsInfo, authorization, updateCommitInfoDebounce, pageSize } from '../Api'
+import { authorization, updateCommitInfoDebounce, pageSize } from '../Api'
 import Authorization from './Authorization'
 import CommitsTable from './CommitsTable'
 import Loader from './Loader'
@@ -18,7 +18,9 @@ const loadNextCommits = () => {
   store.dispatch({
     type: 'START_LOADER'
   })
-  setCommitsInfo(pageSize, store.getState().filter)
+  store.dispatch({
+    type: 'SET_COMMITS'
+  })
 }
 
 const updateCommitInfo = updateCommitInfoDebounce()
